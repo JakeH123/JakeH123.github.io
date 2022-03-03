@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Card Collecting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<! –– Bootstrap --> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<! –– External Style sheet -->  
+  <link rel="stylesheet" href="external.css">    
+    
+ <! –– Internal Style sheet -->
+    <style>
+        .jumbotron{
+            height: 30rem;
+        }
+
+        #searchList{
+            list-style-type: none;
+        } 
+        
+        p{
+            font-size: 1.5rem;
+        }
+    </style>
+    
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Collection</a></li>
+        <li><a href="about.html">About Collecting</a></li>
+        <li><a href="tools.html">Tools</a></li>
+    </ul>
+</nav>   
+
+<! –– Inline Style -->
+<div class="jumbotron text-center" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Images/jumbo.jpg); background-repeat: no-repeat; background-size: 100% auto; color: white;">
+    <h1>My Collection</h1>
+</div>
+
+<div class="container">
+  <h2>Notable Cards</h2>
+  <p>Filter out cards with this search bar:</p>  
+  <input class="form-control" id="Input1" type="text" placeholder="Search">
+  <br>
+  <ul id="searchList">
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Umbreon Gold Star</h3><div class="inner-li"><img src="Images/umbreon1.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Pokemon<br><b>Condition:</b> Moderately Played (Ungraded)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Larry Fitzgerald Kaboom</h3><div class="inner-li"><img src="Images/larry.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Football<br><b>Condition:</b> Mint (Psa: 10)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Kyler Murray Rookie</h3><div class="inner-li"><img src="Images/kyler1.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Football<br><b>Condition:</b> Mint (Ungraded)<br><b>Rarity:</b> Silver Prizm<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Aaron Judge Kaboom</h3><div class="inner-li"><img src="Images/judge.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Baseball<br><b>Condition:</b> Near Mint (Ungraded)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Kyler Murray Rookie (Auto)</h3><div class="inner-li"><img src="Images/kyler2.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Football<br><b>Condition:</b> Near Mint (Ungraded)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Base Set Charizard</h3><div class="inner-li"><img src="Images/charizard.png" class="inner-li-img"></div><p><br><b>Type:</b> Pokemon<br><b>Condition:</b> Near Mint (Ungraded)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Umbreon Alternate Art</h3><div class="inner-li"><img src="Images/umbreon2.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Pokemon<br><b>Condition:</b> Near Mint (Ungraded)<br></p></li>
+      <li class="col-md-4"><h3 style="text-decoration: underline;">Aaron Judge (Auto)</h3><div class="inner-li"><img src="Images/judge2.jpg" class="inner-li-img"></div><p><br><b>Type:</b> Baseball<br><b>Condition:</b> Mint (Ungraded)<br></p></li>
+  </ul>  
+</div>    
+    
+    
+    
+    
+
+    
+<div id="footer" class="col-md-12">
+    <p class="footer-text">By Jake Hoffman</p>
+</div>
+    
+    
+<script>
+$(document).ready(function(){
+  $("#Input1").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#searchList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>    
+    
+</body>
